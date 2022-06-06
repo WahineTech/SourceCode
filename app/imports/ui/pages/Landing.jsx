@@ -11,7 +11,7 @@ const Landing = () => (
 
       <Col xs={8} className="d-flex flex-column justify-content-center">
         <h1>Manoa Fitness Finder</h1>
-        <p>Improving lifestyle by connecting to others</p>
+        <p>Improving lifestyle by connecting with others</p>
       </Col>
 
     </Row>
