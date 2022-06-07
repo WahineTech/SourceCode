@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
-import { Alert, Card, Col, Container, Row } from 'react-bootstrap';
 import SimpleSchema from 'simpl-schema';
+import { Alert, Card } from 'react-bootstrap';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
+import { Container, Grid, Header, Divider, Image } from 'semantic-ui-react';
 import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-bootstrap5';
 
 /**
@@ -41,12 +42,16 @@ const SignIn = () => {
   }
   // Otherwise return the Login form.
   return (
-    <Container id="signin-page">
-      <Row className="justify-content-center">
-        <Col xs={5}>
-          <Col className="text-center">
-            <h2>Login to your account</h2>
-          </Col>
+    <Container>
+      <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
+        <Grid.Column>
+          <Image src="/images/SignIn.JPG"/>
+        </Grid.Column>
+        <Divider hidden vertical/>
+        <Grid.Column>
+          <Header as="h2" textAlign="center">
+            Login to connect now!
+          </Header>
           <AutoForm schema={bridge} onSubmit={data => submit(data)}>
             <Card>
               <Card.Body>
@@ -68,7 +73,8 @@ const SignIn = () => {
               {error}
             </Alert>
           )}
-        </Col></Row>
+        </Grid.Column>
+      </Grid>
     </Container>
   );
 };
